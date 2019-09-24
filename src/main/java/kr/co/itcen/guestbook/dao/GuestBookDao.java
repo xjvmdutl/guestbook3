@@ -32,7 +32,7 @@ public class GuestBookDao {
 	         pstmt = connection.prepareStatement(sql);
 	         pstmt.setString(1, vo.getName());
 	         pstmt.setString(2, vo.getPassword());
-	         pstmt.setString(3, vo.getText());
+	         pstmt.setString(3, vo.getContents());
 	         int count = pstmt.executeUpdate();
 	         result = (count==1);
 	         stmt=connection.createStatement();
@@ -97,7 +97,7 @@ public class GuestBookDao {
 	        	 GuestBookVo vo = new GuestBookVo();
 	        	 vo.setNo(no);
 	        	 vo.setName(name);
-	        	 vo.setText(contents);
+	        	 vo.setContents(contents);
 	        	 vo.setReg_date(date);
 	        	 result.add(vo);
 	         }
